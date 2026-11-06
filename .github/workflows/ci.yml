@@ -29,6 +29,8 @@ jobs:
       - name: Unified syntax, YAML, source, manifest and regression checks
         run: npm run check
       - name: Pack the validated bundle
-        run: npm pack --pack-destination artifacts
+        run: |
+          node -e "require('node:fs').mkdirSync('artifacts', { recursive: true })"
+          npm pack --pack-destination artifacts
       - name: Verify actual packed files and declared entry
         run: node scripts/check-package.mjs --packed-dir artifacts

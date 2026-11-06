@@ -22,9 +22,10 @@
 - 保留父 spawn 配置的 `agentPreset: conductor-child` 映射，但明确 fork / workflow / ralph 不因此全部受 child 配置约束；不再承诺所有子代理都是叶子节点。
 - [README](<README.md>)取消“市场已收录”、默认手改 profile、未经核验的 CLI / GUI 安装承诺；常规安装与升级使用 bundle 管理，并观察 `application` 与重启要求。
 - `prepack` 与 `prepublishOnly` 共用检查门禁，避免发布跳过生成物和资源校验。
+- 修复全新 checkout 打包时输出目录不存在的 `ENOENT`：CI 与维护文档均先跨平台创建 `artifacts` 目录，再运行 `npm pack`；新增对应回归检查。
 
 ### Verification notes
 
-- 发布准备检查已通过本地 112 项测试及包含 19 个文件的实际 tarball 校验；最终发布前应对最后修改重新检查与打包。这些是本地记录，不表示 GitHub Actions 已运行。
+- 本地 113 项测试已通过；实际 tarball 按发布流程重新生成并核对，当前分发清单为 19 个文件。CI 的通过状态以 GitHub Actions 实际结果为准。
 - 尚未安装 bundle 或修改 profile；真实 profile 的注册、运行行为、中英文显示和图标渲染仍按[发布指南中的清单](<docs/PUBLISHING.md#7-真实-profile-验收清单尚待执行>)验收。
 - 尚未声明最低 DSH 版本；npm 发布权限与版本状态以实际 registry 检查为准，市场投稿 schema / PR 路径仍待目标维护者确认。

@@ -556,6 +556,17 @@ for (const relative of [
   });
 }
 
+test('CI: prepares the artifact directory before npm pack in a clean checkout', () => {
+  const workflow = YAML.parse(readFileSync(resolve(ROOT, '.github/workflows/ci.yml'), 'utf8'));
+  const pack = workflow.jobs.verify.steps.find((step) => step.name === 'Pack the validated bundle');
+  assert.ok(pack, 'CI must retain the actual pack step');
+  const commands = pack.run.trim().split(/\r?\n/).map((line) => line.trim());
+  const prepareIndex = commands.indexOf(`node -e "require('node:fs').mkdirSync('artifacts', { recursive: true })"`);
+  const packIndex = commands.indexOf('npm pack --pack-destination artifacts');
+  assert.ok(prepareIndex >= 0, 'create the ignored artifact directory on both runner platforms');
+  assert.ok(packIndex > prepareIndex, 'create the directory before npm writes the tarball');
+});
+
 for (const script of ['scripts/compose-bundle-patch.mjs', 'scripts/check-package.mjs']) {
   test(`CLI: ${script} --check succeeds without rewriting project inputs`, () => {
     const paths = [

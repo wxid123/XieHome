@@ -48,6 +48,7 @@ npm run check
 
 ```bash
 npm run check:package
+node -e "require('node:fs').mkdirSync('artifacts', { recursive: true })"
 npm pack --pack-destination artifacts
 npm run check:package -- --packed-dir artifacts
 ```
