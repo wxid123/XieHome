@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "编排模式（Conductor）",
+    "description": "独立维护的 conductor 与 conductor-child DSH 预设：通过 persona 引导 todo 计划、任务委派与长期目标管理。"
+  }
+}

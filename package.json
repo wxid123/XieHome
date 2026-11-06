@@ -1,0 +1,66 @@
+{
+  "name": "dsh-preset-conductor",
+  "version": "0.1.0",
+  "private": false,
+  "description": "DSH 编排模式（Conductor）：主会话编排与受限子任务两个独立维护的 Agent 预设，提供计划、并行委派和长目标提示规则。",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "agent-preset",
+    "preset",
+    "orchestration",
+    "conductor",
+    "subagent",
+    "delegation"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wxid123/XieHome.git"
+  },
+  "homepage": "https://github.com/wxid123/XieHome#readme",
+  "bugs": {
+    "url": "https://github.com/wxid123/XieHome/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "type": "module",
+  "exports": {
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "scripts": {
+    "compose": "node scripts/compose-bundle-patch.mjs",
+    "test": "node --test",
+    "check:package": "node scripts/check-package.mjs",
+    "check": "node scripts/check.mjs",
+    "prepack": "node scripts/check.mjs",
+    "prepublishOnly": "node scripts/check.mjs"
+  },
+  "files": [
+    "cordis.patch.yml",
+    "presets/",
+    "scripts/",
+    "test/",
+    "locale/",
+    "icon.svg",
+    "docs/",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "yaml": "2.9.1"
+  }
+}

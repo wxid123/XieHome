@@ -1,0 +1,3 @@
+name: 编排模式（Conductor）· 子任务
+description: 独立维护的受限子任务预设，供 conductor 的普通 spawn 显式选择；省略 subagent_fork / workflow / ralph，保留普通 spawn 的 maxDepth 1。不承诺其他委派路径的全局隔离。主会话请选择「编排模式（Conductor）」。
+order: 21.1

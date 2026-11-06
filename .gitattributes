@@ -1,0 +1,6 @@
+# 强制 LF：cordis.patch.yml 与 presets/*.yml 的逐行断言依赖换行一致
+* text=auto eol=lf
+*.yml text eol=lf
+*.mjs text eol=lf
+*.md  text eol=lf
+*.json text eol=lf

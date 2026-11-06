@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-labelledby="title description">
+  <!-- SPDX-License-Identifier: MIT; Copyright (c) 2026 dsh-preset-conductor contributors. Original artwork. -->
+  <title id="title">Conductor baton and orchestration nodes</title>
+  <desc id="description">An ivory baton above a teal branching graph on a dark rounded square.</desc>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#17243d"/>
+  <path d="M32 36 16 49M32 36 48 49" fill="none" stroke="#6ddbd2" stroke-width="3.5" stroke-linecap="round"/>
+  <circle cx="32" cy="36" r="5" fill="#6ddbd2"/>
+  <circle cx="16" cy="49" r="5" fill="#6ddbd2"/>
+  <circle cx="48" cy="49" r="5" fill="#6ddbd2"/>
+  <path d="m22 27 26-15" fill="none" stroke="#fff6dc" stroke-width="4" stroke-linecap="round"/>
+  <path d="m17 30 10-6" fill="none" stroke="#edbb69" stroke-width="7" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,3 @@
+name: 编排模式（Conductor）
+description: 完整委派组（spawn/fork/workflow/ralph）+ 编排纪律 persona：命中可观测特征才先 todo 后动手、独立工作同批并行委派（上限 4、有依赖则串行）、长目标 create_goal 自动续行。适合 Flash 级等不主动委派的模型。
+order: 21
